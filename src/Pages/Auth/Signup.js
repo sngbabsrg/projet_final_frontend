@@ -69,6 +69,12 @@ function SignUpForm() {
     clearRegisteredUser();
   }, [clearRegisteredUser]);
 
+  // Ajoute ce useEffect pour logguer registeredUser quand il change
+  useEffect(() => {
+    console.log("registeredUser changed:", registeredUser);
+  }, [registeredUser]);
+
+
   const submitHandler = (e) => {
     e.preventDefault();
     signUp({ name, email, password });

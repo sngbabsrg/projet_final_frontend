@@ -72,6 +72,7 @@ class AuthProvider extends Component {
       .post("/users", { name, email, password })
       .then((res) => {
         console.log(res.data);
+        console.log("signUp response", res)
         if (res.status === 201) {
           const { user } = res.data;
           this.setState({ registeredUser: user });
